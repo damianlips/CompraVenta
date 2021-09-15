@@ -1,3 +1,38 @@
 <resources>
-    <string name="app_name">CompraVenta</string>
+    <string name="app_name">AppCompraVenta</string>
+    <string name="titulo">Título</string>
+    <string name="titulo_hint">Ingrese el título de la publicación</string>
+    <string name="descripcion">Descripción (Opcional)</string>
+    <string name="descripcion_hint">Ingrese una descripción del producto</string>
+    <string name="correo">Correo de contacto</string>
+    <string name="correo_hint">Correo electronico</string>
+    <string name="precio">Precio</string>
+    <string name="precio_hint">Ingrese el precio del producto</string>
+    <string name="categoria">Categoría</string>
+    <string name="descuento">Ofrecer descuento de envío</string>
+
+    <string-array name="opciones">
+        <item>INDUMENTARIA</item>
+        <item>ELECTRONICA</item>
+        <item>ENTRETENIMIENTO</item>
+        <item>JARDIN</item>
+        <item>VEHICULOS</item>
+        <item>JUGUETES</item>
+    </string-array>
+    <string name="retiro">Retiro en persona</string>
+    <string name="direccion">Dirección de retiro</string>
+    <string name="direccion_hint">Dirección de retiro</string>
+    <string name="terminos">Aceptar los términos y condiciones</string>
+    <string name="publicar">PUBLICAR</string>
+
+    <string name="error_titulo_vacio">El campo Título es obligatorio</string>
+    <string name="error_precio_vacio">El campo Precio es obligatorio</string>
+    <string name="error_precio">El precio debe ser mayor a 0</string>
+    <string name="error_descuento">Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio</string>
+    <string name="error_titulo_formato">El campo Título solo permite letras, números, comas, puntos o saltos de linea</string>
+    <string name="error_correo_formato">El campo Correo de contacto debe contener al menos una @ y 3 letras luego de la @</string>
+    <string name="error_descripcion_formato">El campo Descripción solo permite letras, números, comas, puntos o saltos de linea</string>
+    <string name="error_direccion_vacio">El campo Dirección de retiro es obligatorio</string>
+    <string name="error_direccion_formato">El campo Dirección de retiro solo permite letras, números, comas, puntos o saltos de linea</string>
+    <string name="exito">El producto ha sido publicado exitosamente</string>
 </resources>
