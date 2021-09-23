@@ -1,5 +1,8 @@
 package com.example.compraventa;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +13,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     EditText correo;
     EditText precio;
     ArrayAdapter<CharSequence> adapter;
-    Spinner categoria;
+    EditText categoriaET;
     Switch ofrecerDescuentoSwitch;
     SeekBar descuentoSB;
     TextView progresoLbl;
@@ -31,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     EditText direccionRetiro;
     CheckBox terminos;
     Button publicar;
+    Button cambiar_categoria;
     LinearLayout descuentoLayout;
-
+    Categoria categoria;
+    private static final int CODIGO_BUSCAR_CATEGORIA = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +54,8 @@ public class MainActivity extends AppCompatActivity {
         publicar = findViewById(R.id.publicar_button);
         descuentoSB = findViewById(R.id.seekBar_descuento);
         descuentoLayout = findViewById(R.id.descuento_layout);
-        //final String[] opciones = {"INDUMENTARIA", "ELECTRONICA", "ENTRETENIMIENTO", "JARDIN", "VEHICULOS", "JUGUETES" };
-        //ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,opciones);
-        adapter = ArrayAdapter.createFromResource(this,
-                R.array.opciones, android.R.layout.simple_spinner_item);
-        categoria = findViewById(R.id.spinner_categoria);
-        categoria.setAdapter(adapter);
+        cambiar_categoria = findViewById(R.id.button_cambiar_categoria);
+        categoriaET = findViewById(R.id.categoria_seleccionada);
         progresoLbl.setText(String.valueOf(descuentoSB.getProgress()));
         ofrecerDescuentoSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -102,6 +102,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        cambiar_categoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CategoriasRecycler.class);
+                startActivityForResult(intent,CODIGO_BUSCAR_CATEGORIA);
+
+            }
+        });
+
         publicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,7 +141,10 @@ public class MainActivity extends AppCompatActivity {
                     errores++;
                     Toast.makeText(MainActivity.this,R.string.error_precio,Toast.LENGTH_LONG).show();
                 }
-
+                if(categoriaET.getText().equals(R.string.ninguna_categoria_seleccionada)){
+                    errores++;
+                    Toast.makeText(MainActivity.this,R.string.error_categoria_vacia,Toast.LENGTH_LONG).show();
+                }
 
                 if(ofrecerDescuentoSwitch.isChecked()){
                     if(descuentoSB.getProgress()==0){
@@ -157,5 +169,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
-}
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if( resultCode == Activity.RESULT_OK){
+            if(requestCode==CODIGO_BUSCAR_CATEGORIA){
+                String nombreCategoria = data.getExtras().getString("nombre");
+                String idCategoria = data.getExtras().getString("id");
+                String colorCategoria = data.getExtras().getString("color");
+                categoria = new Categoria(nombreCategoria,idCategoria,colorCategoria);
+                categoriaET.setText(categoria.nombre);
+                //categoriaET.setBackgroundColor(categoria.color);
+            }
+        }
+    }
+
+
+    }

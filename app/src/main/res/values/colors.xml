@@ -7,4 +7,41 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="accesorios_para_vehículos">#FB0505</color>
+    <color name="agro">#4CAF50</color>
+    <color name="alimentos_y_bebidas">#FFEB3B</color>
+    <color name="animales_y_mascotas">#9C4023</color>
+    <color name="antiguedades_y_colecciones">#451202</color>
+    <color name="arte_libreria_y_merceria">#FF5722</color>
+    <color name="autos_motos_y_otros">#AE0000</color>
+    <color name="bebes">#466A03</color>
+    <color name="belleza_y_cuidado_personal">#9C27B0</color>
+    <color name="camaras_y_accesorios">#00BCD4</color>
+    <color name="celulares_y_telefonos">#009688</color>
+    <color name="computacion">#3F51B5</color>
+    <color name="consolas_y_videojuegos">#DC3529</color>
+    <color name="construccion">#451202</color>
+    <color name="deportes_y_fitness">#12268C</color>
+    <color name="electrodomesticos_y_aires_ac">#466A60</color>
+    <color name="electronica_audio_y_video">#9C27B0</color>
+    <color name="entradas_para_eventos">#3F51B5</color>
+    <color name="herramientas">#2B0303</color>
+    <color name="hogar_muebles_y_jardin">#21A326</color>
+    <color name="industrias_y_oficinas">#221A1A</color>
+    <color name="inmuebles">#FF5722</color>
+    <color name="instrumentos_musicales">#F44336</color>
+    <color name="joyas_y_relojes">#FFEB3B</color>
+    <color name="juegos_y_juguetes">#3F51B5</color>
+    <color name="libros_revistas_y_comics">#FFC107</color>
+    <color name="musica_peliculas_y_series">#E91E63</color>
+    <color name="ropa_y_accesorios">#CDDC39</color>
+    <color name="salud_y_equipamiento_medico">#00BCD4</color>
+    <color name="servicios">#4CAF50</color>
+    <color name="souvenirs_cotillon_y_fiestas">#E32D2D</color>
+    <color name="otras_categorias">#DFE5E6</color>
+
+
+
+
 </resources>

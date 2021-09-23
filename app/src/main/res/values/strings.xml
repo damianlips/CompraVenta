@@ -8,7 +8,9 @@
     <string name="correo_hint">Correo electronico</string>
     <string name="precio">Precio</string>
     <string name="precio_hint">Ingrese el precio del producto</string>
-    <string name="categoria">Categoría</string>
+    <string name="categoria">Categoría seleccionada</string>
+    <string name="ninguna_categoria_seleccionada">Ninguna</string>
+    <string name="cambiar_categoria">Cambiar categoría</string>
     <string name="descuento">Ofrecer descuento de envío</string>
 
     <string-array name="opciones">
@@ -27,6 +29,7 @@
 
     <string name="error_titulo_vacio">El campo Título es obligatorio</string>
     <string name="error_precio_vacio">El campo Precio es obligatorio</string>
+    <string name="error_categoria_vacia">El campo Categoría es obligatorio</string>
     <string name="error_precio">El precio debe ser mayor a 0</string>
     <string name="error_descuento">Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio</string>
     <string name="error_titulo_formato">El campo Título solo permite letras, números, comas, puntos o saltos de linea</string>
@@ -35,4 +38,39 @@
     <string name="error_direccion_vacio">El campo Dirección de retiro es obligatorio</string>
     <string name="error_direccion_formato">El campo Dirección de retiro solo permite letras, números, comas, puntos o saltos de linea</string>
     <string name="exito">El producto ha sido publicado exitosamente</string>
+
+
+    <string name="accesorios_para_vehículos">#FB0505</string>
+    <string name="agro">#4CAF50</string>
+    <string name="alimentos_y_bebidas">#FFEB3B</string>
+    <string name="animales_y_mascotas">#9C4023</string>
+    <string name="antiguedades_y_colecciones">#451202</string>
+    <string name="arte_libreria_y_merceria">#FF5722</string>
+    <string name="autos_motos_y_otros">#AE0000</string>
+    <string name="bebes">#466A03</string>
+    <string name="belleza_y_cuidado_personal">#9C27B0</string>
+    <string name="camaras_y_accesorios">#00BCD4</string>
+    <string name="celulares_y_telefonos">#009688</string>
+    <string name="computacion">#3F51B5</string>
+    <string name="consolas_y_videojuegos">#DC3529</string>
+    <string name="construccion">#451202</string>
+    <string name="deportes_y_fitness">#12268C</string>
+    <string name="electrodomesticos_y_aires_ac">#466A60</string>
+    <string name="electronica_audio_y_video">#9C27B0</string>
+    <string name="entradas_para_eventos">#3F51B5</string>
+    <string name="herramientas">#2B0303</string>
+    <string name="hogar_muebles_y_jardin">#21A326</string>
+    <string name="industrias_y_oficinas">#221A1A</string>
+    <string name="inmuebles">#FF5722</string>
+    <string name="instrumentos_musicales">#F44336</string>
+    <string name="joyas_y_relojes">#FFEB3B</string>
+    <string name="juegos_y_juguetes">#3F51B5</string>
+    <string name="libros_revistas_y_comics">#FFC107</string>
+    <string name="musica_peliculas_y_series">#E91E63</string>
+    <string name="ropa_y_accesorios">#CDDC39</string>
+    <string name="salud_y_equipamiento_medico">#00BCD4</string>
+    <string name="servicios">#4CAF50</string>
+    <string name="souvenirs_cotillon_y_fiestas">#E32D2D</string>
+    <string name="otras_categorias">#DFE5E6</string>
+
 </resources>
