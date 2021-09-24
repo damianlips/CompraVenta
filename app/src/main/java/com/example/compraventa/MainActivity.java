@@ -2,6 +2,7 @@ package com.example.compraventa;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText correo;
     EditText precio;
     ArrayAdapter<CharSequence> adapter;
-    EditText categoriaET;
+  //  EditText categoriaET;
     Switch ofrecerDescuentoSwitch;
     SeekBar descuentoSB;
     TextView progresoLbl;
@@ -33,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
     EditText direccionRetiro;
     CheckBox terminos;
     Button publicar;
-    Button cambiar_categoria;
+   // Button cambiar_categoria;
     LinearLayout descuentoLayout;
     Categoria categoria;
+
+    TextView categoriaSeleccionada;
     private static final int CODIGO_BUSCAR_CATEGORIA = 123;
 
     @Override
@@ -54,8 +57,11 @@ public class MainActivity extends AppCompatActivity {
         publicar = findViewById(R.id.publicar_button);
         descuentoSB = findViewById(R.id.seekBar_descuento);
         descuentoLayout = findViewById(R.id.descuento_layout);
-        cambiar_categoria = findViewById(R.id.button_cambiar_categoria);
-        categoriaET = findViewById(R.id.categoria_seleccionada);
+     //  cambiar_categoria = findViewById(R.id.button_cambiar_categoria);
+       // categoriaET = findViewById(R.id.categoria_seleccionada);
+        categoriaSeleccionada = findViewById(R.id.categoria_seleccionada2);
+
+
         progresoLbl.setText(String.valueOf(descuentoSB.getProgress()));
         ofrecerDescuentoSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -101,13 +107,21 @@ public class MainActivity extends AppCompatActivity {
                 else publicar.setEnabled(false);
             }
         });
-
+/*
         cambiar_categoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, CategoriasRecycler.class);
                 startActivityForResult(intent,CODIGO_BUSCAR_CATEGORIA);
 
+            }
+        });
+*/
+        categoriaSeleccionada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CategoriasRecycler.class);
+                startActivityForResult(intent,CODIGO_BUSCAR_CATEGORIA);
             }
         });
 
@@ -141,7 +155,13 @@ public class MainActivity extends AppCompatActivity {
                     errores++;
                     Toast.makeText(MainActivity.this,R.string.error_precio,Toast.LENGTH_LONG).show();
                 }
+               /*
                 if(categoriaET.getText().equals(R.string.ninguna_categoria_seleccionada)){
+                    errores++;
+                    Toast.makeText(MainActivity.this,R.string.error_categoria_vacia,Toast.LENGTH_LONG).show();
+                }
+                */
+                if(categoriaSeleccionada.getText().equals(R.string.ninguna_categoria_seleccionada)){
                     errores++;
                     Toast.makeText(MainActivity.this,R.string.error_categoria_vacia,Toast.LENGTH_LONG).show();
                 }
@@ -179,11 +199,28 @@ public class MainActivity extends AppCompatActivity {
                 String idCategoria = data.getExtras().getString("id");
                 String colorCategoria = data.getExtras().getString("color");
                 categoria = new Categoria(nombreCategoria,idCategoria,colorCategoria);
-                categoriaET.setText(categoria.nombre);
+                categoriaSeleccionada.setText(categoria.nombre);
+                categoriaSeleccionada.setBackgroundColor(Color.parseColor(categoria.color));
                 //categoriaET.setBackgroundColor(categoria.color);
             }
         }
     }
 
+
+/*
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if( resultCode == Activity.RESULT_OK){
+            if(requestCode==CODIGO_BUSCAR_CATEGORIA){
+                String nombreCategoria = data.getExtras().getString("nombre");
+                String idCategoria = data.getExtras().getString("id");
+                String colorCategoria = data.getExtras().getString("color");
+                categoria = new Categoria(nombreCategoria,idCategoria,colorCategoria);
+                categoriaET.setText(categoria.nombre);
+                categoriaET.setBackgroundColor(Color.parseColor(categoria.color));
+                //categoriaET.setBackgroundColor(categoria.color);
+            }
+        }
+    }
+*/
 
     }

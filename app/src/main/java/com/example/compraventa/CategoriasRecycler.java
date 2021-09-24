@@ -104,7 +104,7 @@ public class CategoriasRecycler extends AppCompatActivity {
         categorias.add(new Categoria("Servicios","MLA1540",getString(R.string.servicios)));
         categorias.add(new Categoria("Souvenirs, Cotillón y Fiestas","MLA9304",getString(R.string.souvenirs_cotillon_y_fiestas)));
         categorias.add(new Categoria("Otras categorías","MLA1953",getString(R.string.otras_categorias)));
-        mAdapter = new CategoryRecyclerAdapter(categorias);
+        mAdapter = new CategoryRecyclerAdapter(categorias,this);
         mRecyclerView.setAdapter(mAdapter);
 
 

@@ -72,30 +72,14 @@
         android:text="@string/categoria" />
 
 
-
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/categoria_seleccionada2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="@string/ninguna_categoria_seleccionada"
+        android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/categoria_seleccionada"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:enabled="false"
-            android:inputType="textPersonName"
-            android:text="@string/ninguna_categoria_seleccionada" />
 
-        <Button
-            android:id="@+id/button_cambiar_categoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/cambiar_categoria"
-            android:textSize="14sp" />
-    </LinearLayout>
 
     <Switch
         android:id="@+id/switch_descuento"

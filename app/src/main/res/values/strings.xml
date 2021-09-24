@@ -9,7 +9,7 @@
     <string name="precio">Precio</string>
     <string name="precio_hint">Ingrese el precio del producto</string>
     <string name="categoria">Categoría seleccionada</string>
-    <string name="ninguna_categoria_seleccionada">Ninguna</string>
+    <string name="ninguna_categoria_seleccionada">Seleccione una categoria</string>
     <string name="cambiar_categoria">Cambiar categoría</string>
     <string name="descuento">Ofrecer descuento de envío</string>
 
