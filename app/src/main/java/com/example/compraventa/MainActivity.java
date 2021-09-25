@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,R.string.error_categoria_vacia,Toast.LENGTH_LONG).show();
                 }
                 */
-                if(categoriaSeleccionada.getText().equals(R.string.ninguna_categoria_seleccionada)){
+                if(categoriaSeleccionada.getText().toString().equals("")){
                     errores++;
                     Toast.makeText(MainActivity.this,R.string.error_categoria_vacia,Toast.LENGTH_LONG).show();
                 }
